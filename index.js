@@ -1,1 +1,1 @@
-console.log("这是一个trunk分支");
+console.log("这是trunk和dev分支合并后的结果");
