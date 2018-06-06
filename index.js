@@ -1,1 +1,17 @@
-console.log("这是trunk和dev分支合并后的结果");
+// console.log("这是trunk和dev分支合并后的结果");
+
+let express = require('express');
+let graphqlHTTP = require('express-graphql');
+let MyGraphQLSchema = require('./schema');
+
+let app = express();
+
+
+app.use('/graphql', graphqlHTTP({
+	schema: MyGraphQLSchema,
+	// rootValue: root,
+	graphiql: true, //启用GraphiQL
+}));
+
+app.listen(4000, () => console.log('Server running http://127.0.0.1:4000'));
+
